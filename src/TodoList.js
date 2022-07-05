@@ -1,16 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Todo from './Todo'
 
-export default class TodoList extends Component {
-  render() {
-    return (
-    <>    
-    <div>Dioporco</div>
-    <input type="text" />
-    <button>Add</button>
-    <button>Clear</button>
-    <div>number to do left</div>
-    </>
-
-    )
-  }
+export default function TodoList({todos}) {
+  return (
+    todos.map(todo => {
+      return <Todo key={todo.id} todo={todo} />
+    })
+  )
 }
